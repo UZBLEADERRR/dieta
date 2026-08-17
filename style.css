@@ -1,0 +1,621 @@
+:root {
+    --bg-dark: #08090d;
+    --bg-card: #12151d;
+    --bg-card-border: rgba(255, 255, 255, 0.08);
+    --primary-neon: #00f59b;
+    --primary-glow: rgba(0, 245, 155, 0.35);
+    --accent-cyan: #00d2ff;
+    --accent-orange: #ff5e3a;
+    --accent-purple: #a855f7;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding-bottom: 75px; /* Sticky bar uchun bo'sh joy */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: rgba(8, 9, 13, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--bg-card-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand-text {
+    color: #ffffff;
+}
+
+.brand-accent {
+    color: var(--primary-neon);
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #1a1f2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid var(--bg-card-border);
+}
+
+.nav-social-btn.ig-glow:hover {
+    background: #e1306c;
+}
+
+.nav-social-btn.tg-glow:hover {
+    background: #0088cc;
+}
+
+/* HERO SECTION */
+.hero-section {
+    padding: 24px 18px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge-fire {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(255, 94, 58, 0.12);
+    border: 1px solid rgba(255, 94, 58, 0.35);
+    color: #ff7654;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    white-space: nowrap;
+    max-width: 90%;
+}
+
+.hero-title {
+    font-size: 2.1rem;
+    font-weight: 900;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-neon) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 360px;
+    margin-bottom: 22px;
+}
+
+/* COACH HERO CARD */
+.coach-hero-card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 245, 155, 0.25);
+    border-radius: 22px;
+    padding: 18px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 245, 155, 0.08);
+    margin-bottom: 20px;
+}
+
+.coach-avatar-wrapper {
+    position: relative;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--bg-card-border);
+}
+
+.avatar-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--primary-neon);
+    color: #08090d;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 8px;
+}
+
+.coach-visual {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.coach-circle {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 245, 155, 0.2), rgba(0, 210, 255, 0.2));
+    border: 2px solid var(--primary-neon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.coach-emoji {
+    font-size: 2rem;
+}
+
+.coach-details {
+    text-align: left;
+}
+
+.coach-title {
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.coach-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.coach-tags {
+    display: flex;
+    gap: 6px;
+}
+
+.coach-tags .tag {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--bg-card-border);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-neon);
+}
+
+/* STATS */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 12px;
+    padding: 10px 4px;
+    text-align: center;
+}
+
+.stat-card.highlight {
+    background: rgba(0, 245, 155, 0.08);
+    border-color: rgba(0, 245, 155, 0.3);
+}
+
+.stat-num {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: var(--primary-neon);
+}
+
+.stat-lbl {
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* CTA BUTTONS */
+.btn-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 380px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--primary-neon) 0%, #00d2ff 100%);
+    color: #08090d;
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px var(--primary-glow);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.btn-cta-primary:active {
+    transform: scale(0.98);
+}
+
+/* SECTIONS */
+.section-container {
+    padding: 24px 18px;
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--primary-neon);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    font-size: 1.45rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* FEATURES */
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.feat-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--bg-card-border);
+}
+
+.feat-content h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.feat-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* STEPS */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 16px;
+    padding: 16px;
+    position: relative;
+}
+
+.step-card.active-step {
+    border-color: rgba(0, 245, 155, 0.4);
+    background: linear-gradient(180deg, rgba(0, 245, 155, 0.06) 0%, var(--bg-card) 100%);
+}
+
+.step-badge {
+    display: inline-block;
+    background: rgba(0, 245, 155, 0.15);
+    color: var(--primary-neon);
+    font-size: 0.7rem;
+    font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.step-card h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.step-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* BMI CALCULATOR */
+.calc-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 20px;
+    padding: 20px 16px;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.calc-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.calc-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.input-field input {
+    background: rgba(8, 9, 13, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-field input:focus {
+    border-color: var(--primary-neon);
+}
+
+.btn-calculate {
+    width: 100%;
+    background: rgba(0, 245, 155, 0.12);
+    border: 1px solid var(--primary-neon);
+    color: var(--primary-neon);
+    padding: 13px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.btn-calculate:active {
+    background: var(--primary-neon);
+    color: #08090d;
+}
+
+.bmi-result-box {
+    margin-top: 16px;
+    padding: 14px;
+    background: rgba(8, 9, 13, 0.9);
+    border: 1px solid rgba(0, 245, 155, 0.3);
+    border-radius: 14px;
+    text-align: center;
+    animation: popIn 0.3s ease;
+}
+
+.bmi-score {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-neon);
+}
+
+.bmi-status {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.bmi-advice {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* CTA & CONTACT SECTION */
+.join-banner {
+    background: linear-gradient(180deg, #161b26 0%, #0d1017 100%);
+    border: 1px solid rgba(0, 245, 155, 0.3);
+    border-radius: 22px;
+    padding: 24px 16px;
+    text-align: center;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.limited-spots {
+    display: inline-block;
+    background: rgba(255, 94, 58, 0.15);
+    border: 1px solid rgba(255, 94, 58, 0.4);
+    color: #ff6e4a;
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.join-title {
+    font-size: 1.45rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.join-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.direct-contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 0.92rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.btn-tg {
+    background: #0088cc;
+    box-shadow: 0 4px 18px rgba(0, 136, 204, 0.35);
+}
+
+.btn-ig {
+    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+    box-shadow: 0 4px 18px rgba(220, 39, 67, 0.35);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 24px 18px;
+    border-top: 1px solid var(--bg-card-border);
+}
+
+.footer-logo {
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+
+.footer-logo span {
+    color: var(--primary-neon);
+}
+
+.footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.footer-sub {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* STICKY BOTTOM BAR */
+.sticky-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(8, 9, 13, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 16px;
+    z-index: 999;
+}
+
+.sticky-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary-neon) 0%, #00d2ff 100%);
+    color: #08090d;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 4px 16px var(--primary-glow);
+}
